@@ -1,0 +1,47 @@
+import java.util.*;
+
+class subData{
+    
+    public int score;
+    public boolean[] pastWin;
+        public subData(int score,boolean[] pastWin) {
+           this.score = score;
+           this.pastWin = pastWin;
+        }
+}
+
+public class MyClass {
+    public static void main(String args[]) {
+    // Task-1 to Create a small data structure that holds details - Name of the team, points they have
+    // earned and result of last 5 matches as per above image
+        HashMap<String,subData> data = new HashMap();
+        
+        data.put("GT",new subData(20,new boolean[]{true,true,false,false,true}));
+        
+        data.put("LSG",new subData(18,new boolean[]{true,false,false,true,true}));
+        
+        data.put("RR",new subData(16,new boolean[]{true,false,true,false,false}));
+        
+        data.put("DC",new subData(14,new boolean[]{true,true,false,true,false}));
+        
+        data.put("RCB",new subData(14,new boolean[]{false,true,true,false,false}));
+        
+        data.put("KKR",new subData(12,new boolean[]{false,true,true,false,true}));
+        
+        data.put("PBKS",new subData(12,new boolean[]{false,true,false,true,false}));
+        
+        data.put("SRH",new subData(12,new boolean[]{true,false,false,false,false}));
+        
+        data.put("CSK",new subData(8,new boolean[]{false,false,true,false,true}));
+        
+        data.put("MI",new subData(6,new boolean[]{false,true,false,true,true}));
+       
+    
+        for (Map.Entry<String,subData> entry : data.entrySet()) {
+            
+            System.out.println("Key = " + entry.getKey() +
+                             ", Value = " + entry.getValue().score +" "+entry.getValue().pastWin[0]+" "+entry.getValue().pastWin[1]+" "+entry.getValue().pastWin[2]+" "+entry.getValue().pastWin[3]+" "+entry.getValue().pastWin[4]);
+       ; }
+        
+        
+}}
